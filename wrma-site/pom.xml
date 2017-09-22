@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>wrma</artifactId>
+        <groupId>com.sheng</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>wrma-site</artifactId>
+    <packaging>war</packaging>
+    <name>wrma-site</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <!-- inner dependency -->
+        <dependency>
+            <groupId>com.sheng</groupId>
+            <artifactId>wrma-core</artifactId>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>wrma-site</finalName>
+    </build>
+</project>
