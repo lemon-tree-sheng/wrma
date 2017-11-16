@@ -20,6 +20,7 @@
         <project.encoding>utf-8</project.encoding>
         <spring.version>4.3.2.RELEASE</spring.version>
         <lombok.version>1.16.8</lombok.version>
+        <jackson.version>2.6.5</jackson.version>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +69,13 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
