@@ -1,4 +1,4 @@
-package com.sheng.wrma.model.constant;
+package com.sheng.wrma.constant;
 
 import lombok.Data;
 

@@ -1,7 +1,6 @@
 package com.sheng.wrma.controller;
 
-import com.sheng.wrma.modal.UserDO;
-import com.sheng.wrma.model.constant.Result;
+import com.sheng.wrma.constant.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +15,6 @@ public class UserController {
 
     @GetMapping("/{id}")
     public Result getUser(@PathVariable Integer id) {
-        UserDO userDO = new UserDO();
-        userDO.setId(id);
-        userDO.setName("sheng:" + id);
-        return Result.success(userDO);
+        return null;
     }
 }
