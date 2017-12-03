@@ -55,6 +55,12 @@
             <artifactId>spring-jdbc</artifactId>
         </dependency>
 
+        <!-- java ee -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
         <!-- test -->
         <dependency>
             <groupId>junit</groupId>

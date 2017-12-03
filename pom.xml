@@ -21,6 +21,9 @@
         <spring.version>4.3.2.RELEASE</spring.version>
         <lombok.version>1.16.8</lombok.version>
         <jackson.version>2.6.5</jackson.version>
+        <jsp.version>2.2</jsp.version>
+        <jstl.version>1.2</jstl.version>
+        <servlet.version>3.1.0</servlet.version>
     </properties>
 
     <dependencyManagement>
@@ -105,6 +108,14 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- java ee-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
