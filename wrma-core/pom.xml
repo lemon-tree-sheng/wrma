@@ -66,6 +66,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

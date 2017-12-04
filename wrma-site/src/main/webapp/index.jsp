@@ -1,8 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="./resources/css/index.css">
+    <meta charset="UTF-8">
+    <title>wrm's site</title>
+    <style>
+        body{
+            background-color: #f0ffff;
+        }
+        .main{
+            margin-top: 200px;
+            text-align: center;
+            font-size:30px;
+        }
+    </style>
 </head>
 <body>
-<h2>wrm's site is coming</h2>
+<div class="main">wrm's site is coming...</div>
 </body>
 </html>
