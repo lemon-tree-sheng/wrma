@@ -7,18 +7,26 @@ public class BlogCategoryDO {
 
     private String categoryName;
 
+    private Integer categoryOrder;
+
     private Date createTime;
 
     private Date updateTime;
 
     private Date deleteTime;
 
-    public BlogCategoryDO(Integer id, String categoryName, Date createTime, Date updateTime, Date deleteTime) {
+    public BlogCategoryDO(Integer id, String categoryName, Integer categoryOrder, Date createTime, Date updateTime, Date deleteTime) {
         this.id = id;
         this.categoryName = categoryName;
+        this.categoryOrder = categoryOrder;
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.deleteTime = deleteTime;
+    }
+
+    public BlogCategoryDO(String categoryName, Integer categoryOrder) {
+        this.categoryName = categoryName;
+        this.categoryOrder = categoryOrder;
     }
 
     public BlogCategoryDO() {
@@ -63,5 +71,13 @@ public class BlogCategoryDO {
 
     public void setDeleteTime(Date deleteTime) {
         this.deleteTime = deleteTime;
+    }
+
+    public Integer getCategoryOrder() {
+        return categoryOrder;
+    }
+
+    public void setCategoryOrder(Integer categoryOrder) {
+        this.categoryOrder = categoryOrder;
     }
 }

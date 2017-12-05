@@ -2,6 +2,8 @@ package com.sheng.wrma.dao;
 
 import com.sheng.wrma.model.entity.BlogCategoryDO;
 
+import java.util.List;
+
 public interface BlogCategoryDOMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface BlogCategoryDOMapper {
     int updateByPrimaryKeySelective(BlogCategoryDO record);
 
     int updateByPrimaryKey(BlogCategoryDO record);
+
+    List<BlogCategoryDO> findList();
 }

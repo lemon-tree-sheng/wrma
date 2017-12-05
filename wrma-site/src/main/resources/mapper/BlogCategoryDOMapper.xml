@@ -5,13 +5,14 @@
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="category_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="category_order" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="delete_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    id, category_name, create_time, update_time, delete_time
+    id, category_name, category_order, create_time, update_time, delete_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -24,9 +25,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.sheng.wrma.model.entity.BlogCategoryDO" >
-    insert into blog_category (id, category_name, create_time, 
+    insert into blog_category (id, category_name, category_order, create_time,
       update_time, delete_time)
-    values (#{id,jdbcType=INTEGER}, #{categoryName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{categoryName,jdbcType=VARCHAR}, #{categoryOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.sheng.wrma.model.entity.BlogCategoryDO" >
@@ -37,6 +38,9 @@
       </if>
       <if test="categoryName != null" >
         category_name,
+      </if>
+      <if test="categoryOrder != null" >
+        category_order,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -55,6 +59,9 @@
       <if test="categoryName != null" >
         #{categoryName,jdbcType=VARCHAR},
       </if>
+      <if test="categoryOrder != null" >
+        #{categoryOrder,jdbcType=INTEGER},
+      </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -72,6 +79,9 @@
       <if test="categoryName != null" >
         category_name = #{categoryName,jdbcType=VARCHAR},
       </if>
+      <if test="categoryOrder != null" >
+        category_order = #{categoryOrder,jdbcType=INTEGER},
+      </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -87,9 +97,15 @@
   <update id="updateByPrimaryKey" parameterType="com.sheng.wrma.model.entity.BlogCategoryDO" >
     update blog_category
     set category_name = #{categoryName,jdbcType=VARCHAR},
+      category_order = #{categoryOrder, jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       delete_time = #{deleteTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="findList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from blog_category
+  </select>
 </mapper>
